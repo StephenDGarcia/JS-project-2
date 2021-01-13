@@ -17,10 +17,10 @@ This function will create and insert/append the elements needed to display a "pa
 */
 function showPage(list, page) {
    //Start Index = (page parameter * items per page) - items per page
-   let startIndex = (page * list.length) - list.length;
+   let startIndex = (page * 9) - 8;
    //End Index = page parameter * items per page
-   let endIndex = page * list.length;
-   //Select the UL element with a class of student-list and assign its value to a variable.
+      let endIndex = page * 9;
+      //Select the UL element with a class of student-list and assign its value to a variable.
    let studentList = document.querySelector('.student-list');
    //Use the innerHTML property set the HTML content of the student-list variable you just created to an empty string. This will remove any students that might have previously been displayed.
    studentList.innerHTML = '';
