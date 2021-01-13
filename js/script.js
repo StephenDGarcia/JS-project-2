@@ -71,23 +71,32 @@ function addPagination(list) {
   // loop over the number of pages needed
    for (let i = 1; i <= numOfPages; i++) {
     // create the elements needed to display the pagination button
-    (let button = `
+    let button = `
       <li>
          <button type="button">1</button>
       </li>
-      `);
+      `;
     // insert the above elements
     linkList.insertAdjacentElement('beforeend', 'button');
    }
   // give the first pagination button a class of "active"
-
+   document.querySelector('button').className = 'active';
   // create an event listener on the `link-list` element
-    // if the click target is a button:
+    linkList.addEventListener('click', (e) => {
+      // if the click target is a button:
+      clickedButton = e.target.clicked;
+      if ( e.target.clicked === 'BUTTON') {
       // remove the "active" class from the previous button
+      active = document.querySelector('.active');
+      active = '';
       // add the active class to the clicked button
+      clickedButton.className = 'active';
       // call the showPage function passing the `list` parameter and page to display as arguments
-   console.log(list);
-}
+      showPage(list, clickedButton.textContent)
+      };
+   });
+      console.log(list);
+
  addPagination(data);
 
 // Call functions
