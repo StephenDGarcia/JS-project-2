@@ -85,15 +85,16 @@ function addPagination(list) {
   // create an event listener on the `link-list` element
      linkList.addEventListener('click', (e) => {
    //    // if the click target is a button:
-       clickedButton = e.target.clicked;
+       clickedButton = e.target.tagName;
        if ( clickedButton === 'BUTTON') {
    //    // remove the "active" class from the previous button
        active = document.querySelector('.active');
        active = '';
    //    // add the active class to the clicked button
        clickedButton.className = 'active';
+       
    //    // call the showPage function passing the `list` parameter and page to display as arguments
-      showPage(list, clickedButton.textContent)
+      showPage(list, linkList.textContent)
        };
     });
   };  //console.log(list);
