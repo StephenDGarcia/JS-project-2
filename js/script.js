@@ -92,9 +92,9 @@ function addPagination(list) {
        active = '';
    //    // add the active class to the clicked button
        clickedButton.className = 'active';
-       
+       console.log(clickedButton);
    //    // call the showPage function passing the `list` parameter and page to display as arguments
-      showPage(list, linkList.textContent)
+      showPage(list, button)
        };
     });
   };  //console.log(list);
