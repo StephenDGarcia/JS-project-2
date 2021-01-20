@@ -26,10 +26,10 @@ function showPage(list, page) {
    //Use the innerHTML property set the HTML content of the student-list variable you just created to an empty string. This will remove any students that might have previously been displayed.
    studentList.innerHTML = '';
    //Loop over the list parameter.
-   for ( let i = 1; i < list.length; i++ ) {
+   for ( let i = 0; i < list.length; i++ ) {
    //Inside the loop:
       //Write a conditional statement that checks if the current index (i) is greater than or equal to the start index variable and less than the end index variable.
-      if ( i > startIndex && i <= endIndex) {
+      if ( i >= startIndex && i < endIndex) {
       //Inside that conditional:
       //Create the DOM elements needed to display the information for each matching student as you iterate over the list parameter. Here is an example of what the the final version of these elements should look like:
          //Pro Tip: Because you will need to create multiple elements to display the information for each student, you might consider using a template literal for this
@@ -60,7 +60,6 @@ This function will create and insert/append the elements needed for the paginati
 function addPagination(list) {
    // create a variable to calculate the number of pages needed
    let numOfPages = Math.ceil( list.length / itemsPerPage );
-   console.log(numOfPages);
   // select the element with a class of `link-list` and assign it to a variable
   const linkList = document.querySelector('.link-list');
   // set the innerHTML property of the variable you just created to an empty string 
@@ -81,7 +80,6 @@ function addPagination(list) {
    let activeButton = linkList.querySelector('button');   
   // give the first pagination button a class of "active"
    activeButton.className = 'active';
-   console.log(activeButton);
   // create an event listener on the `link-list` element
    linkList.addEventListener('click', (e) => {
    // if the click target is a button:
@@ -94,8 +92,6 @@ function addPagination(list) {
       showPage(list, e.target.textContent)
        };
     });
-  };  //console.log(list);
+  }; 
 
  addPagination(data);
-
-// Call functions
